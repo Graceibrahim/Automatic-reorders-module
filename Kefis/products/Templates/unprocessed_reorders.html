@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Unprocessed orders</title>
+
+</head>
+<body>
+
+	<table>
+		<tr>
+			<th>Name</th>
+			<th>Units of Measure</th>
+			<th>Quantity</th>
+			<th>Default Quantity</th>
+			<th>Reorder</th>
+		</tr>
+
+
+		{% for reorder in reorders %}
+
+		<tr>
+			<td>{{ reorder.name }}</td>
+			<td>{{ reorder.units_of_measure }}</td>
+			<td>{{ reorder.quantity }}</td>
+			<td>{{ reorder.default_quantity }}</td>
+			<td><a href = "/product/dispatch/"><button>DISPATCH</button></a></td>
+		</tr>
+
+		{% endfor %}
+	</table>
+
+</body>
+</html>	

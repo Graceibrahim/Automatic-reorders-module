@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Processed Reorders</title>
+</head>
+<body>
+
+	<table>
+		<tr>
+			<th>Name</th>
+			<th>Units of Measure</th>
+			<th>Quantity</th>
+			<th>Default Quantity</th>
+		</tr>
+
+
+		{% for reorder in processed_reorders %}
+
+		<tr>
+			<td>{{ reorder.name }}</td>
+			<td>{{ reorder.units_of_measure }}</td>
+			<td>{{ reorder.quantity }}</td>
+			<td>{{ reorder.default_quantity }}</td>
+		</tr>
+
+		{% endfor %}
+	</table>
+
+	<a href="/product/list"><button>Go back to products list</button></a>
+
+</body>
+</html>

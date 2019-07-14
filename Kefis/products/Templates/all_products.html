@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>All products</title>
+</head>
+<body>
+
+	<a href="/product/add"><button>ADD PRODUCT</button></a>
+
+	<br><br>
+
+	<table>
+		
+		<tr>
+			<th>Name</th>
+			<th>Units of Measure</th>
+			<th>Price</th>
+			<th>Quantity</th>
+			<th>Default Quantity</th>
+			<th>Reorder Level</th>
+			<th>Sell a product</th>
+		</tr>
+
+		{% for product in products %}
+
+			<tr>
+				<td>{{ product.name }}</td>
+				<td>{{ product.units_of_measure }}</td>
+				<td>{{ product.price }}</td>
+				<td>{{ product.quantity }}</td>
+				<td>{{ product.default_quantity }}</td>
+				<td>{{ product.reorder_level }}</td>
+				<td><a href = "/product/sell/{{product.pk}}/"><button>SELL PRODUCT</button></a></td>
+			</tr>
+
+		{% endfor %}	
+
+	</table>
+
+<br><br>
+
+	<a href="/product/reorders/"><button>UNPROCESSED REORDERS</button></a>
+
+<br><br>
+
+	<a href = "/product/dispatch/"><button>PROCESSED REORDERS</button></a>
+
+
+</body>
+</html>	
