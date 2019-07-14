@@ -9,4 +9,6 @@ urlpatterns = [
 	path('sell/<int:pk>/', sell_product, name="sell_product"),
 	path('reorders/', unprocessed_reorders, name="unprocessed_reorders"),
 	path('dispatch/', dispatch_reorder, name="dispatch_reorder"),
+	path('Processedorders/', dispatch_reorder, name="processed_reorder")
+	
 ]
