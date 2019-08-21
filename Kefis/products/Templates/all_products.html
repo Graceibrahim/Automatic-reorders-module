@@ -1,50 +1,79 @@
 <!DOCTYPE html>
-<html>
 <head>
+<html>
 	<title>All products</title>
 	<style>
-		body {background-color:#0e0247;
-			font-family: arial;
-			margin 0 auto}
+body {background-color:#0e0247;
+		font-family: arial;
+		margin:0 auto;
+		text-align: center;
+		padding:30px;
+		text-decoration:none;
+		}
+
 
 h1  {
- 
- font-size: 30pt;
- color: White;
- margin-bottom: 5px;
- text-decoration: underline;
+ font-size:30pt;
+ color: #fff;
+ margin-bottom:5px;
+ text-transform: uppercase;
 
 }
 
 table {
 
- 	margin: 5px;
- 	width: 500px;
-	}
+ 	margin: 0 auto;
+ 	width: 100%;
+ 	height: 100%;
+ 	text-align: center;
+ }
 
 th {
  padding: 3px;
  color:#fd493f;
+ text-transform: uppercase;
 }
 
 td {
- padding-left: 8px;
- padding-right: 8px;
+padding:8px;
  border: 1px solid #990000;
+ text-decoration: none;
  background-color: white;
+
+}
+button{
+		border-radius:30px;
+		width:150px;
+		height:50px;
 }
 
+ul{
+	list-style: none;
+	margin:0;
+	padding:0;
+}
+
+li{
+ display: inline;
+ padding:8px;
+ background-color:#fff;
+ text-decoration:none;
+}
 
 	</style>
 
 
+
+
 </head>
 <body>
-	<h1>All products in the store</h1>
-	
-
-
-	<br><br>
+	<h1>Products available</h1>
+	<ul>
+		<li><a href="/product/add">ADD PRODUCT</a></li>
+		<li><a href="/product/reorders/">UNPROCESSED REORDERS</a></li>
+		<li><a href = "/product/dispatch/">PROCESSED REORDERS</a></li>
+</ul>
+<br><br>
 
 	<table>
 		
@@ -53,9 +82,9 @@ td {
 			<th>Units of Measure</th>
 			<th>Price</th>
 			<th>Quantity</th>
-			<th>Default Quantity</th>
-			<th>Reorder Level</th>
-			<th>Sell a product</th>
+			<th>Quantity Limit</th>
+			<th>Order Level</th>
+			<th>Sell products</th>
 		</tr>
 
 		{% for product in products %}
@@ -73,18 +102,7 @@ td {
 		{% endfor %}	
 
 	</table>
-<br><br>
 
-<a href="/product/add"><button>ADD PRODUCT</button></a>
-
-<br><br>
-
-	<a href="/product/reorders/"><button>UNPROCESSED REORDERS</button></a>
-
-<br><br>
-
-	<a href = "/product/dispatch/"><button>PROCESSED REORDERS</button></a>
-	
 
 
 </body>

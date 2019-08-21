@@ -57,7 +57,7 @@ def unprocessed_reorders(request):
 
 
 
-def dispatch_reorder(request):
+def dispatch_orders(request):
 	products = Product.objects.all()
 
 	for product in products:
@@ -67,7 +67,14 @@ def dispatch_reorder(request):
 				processed_reorders.append(product)
 				product.save()
 				processed_reorders.remove(product)
-				# return redirect("list_products")
+				return redirect("processed_reorders")
 
 	return render(request, "processed_reorders.html", {"processed_reorders":processed_reorders}, {"products":products})	
+
+# def processed_orders(request):
+# 	products=Product.objects.all()
+# 	for product in products:
+# 		if products.quantity<=dispatch_orders:
+			
+
 
